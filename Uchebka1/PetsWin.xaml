@@ -7,6 +7,37 @@
         mc:Ignorable="d"
         Title="PetsWin" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="petsGridd"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="11*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Margin="0,107,0,0" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Udal" Content="Удалить" FontSize="30" Grid.Column="1" Margin="5,31,0,0" Click="Udal_Click"/>
+            <Button x:Name="Sozd" Content="Создать" FontSize="30" Grid.Column="0" Click="Sozd_Click" Margin="0,31,0,0"/>
+        </Grid>
+        <Grid Margin="0,224,0,0" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="88*"/>
+                <RowDefinition Height="45*"/>
+            </Grid.RowDefinitions>
+            <ComboBox Name="FoodCbx"  Grid.Column="1" Margin="10,10,10,33" FontSize="20"/>
+            <TextBox x:Name="pisalka" Grid.Column="0" Margin="33,10,43,21" FontSize="20"/>
+            <TextBox Name="pisalkaType" Grid.Column="2" Margin="10,10,33,21" FontSize="20"/>
+            <TextBlock Text="Введите имя" Grid.Column="0" Grid.Row="1" FontSize="20" HorizontalAlignment="Center"/>
+            <TextBlock Text="Выберете еду" Grid.Column="1" Grid.Row="1" FontSize="20" HorizontalAlignment="Center"/>
+            <TextBlock Text="Введите животное" Grid.Column="2" Grid.Row="1" FontSize="20" HorizontalAlignment="Center"/>
+        </Grid>
+        <DataGrid x:Name="petsGridd" CanUserAddRows="False" Grid.Row="0" SelectionChanged="petsGridd_SelectionChanged"/>
+
     </Grid>
 </Window>

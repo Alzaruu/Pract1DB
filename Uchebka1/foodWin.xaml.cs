@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,30 @@ namespace Uchebka1
         {
             InitializeComponent();
             foodGridd.ItemsSource = food.GetData();
+        }
+
+        private void sozd_Click(object sender, RoutedEventArgs e)
+        {
+            food.InsertQuery(pisalka.Text);
+            foodGridd.ItemsSource = food.GetData();
+        }
+
+        private void udal_Click(object sender, RoutedEventArgs e)
+        {
+            if (foodGridd.SelectedItem != null)
+            {
+                var sell = ((foodGridd.SelectedItem) as DataRowView).Row[0];
+                food.DeleteQuery((int)sell);
+                foodGridd.ItemsSource = food.GetData();
+            }
+        }
+
+        private void foodGridd_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (foodGridd.SelectedItem != null)
+            {
+                var sel = foodGridd.SelectedItem as DataRowView;
+            }
         }
     }
 }

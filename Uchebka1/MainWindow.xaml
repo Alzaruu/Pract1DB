@@ -8,14 +8,10 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="156*" />
-            <RowDefinition Height="109*" />
-            <RowDefinition Height="86*"/>
-            <RowDefinition Height="83*"/>
+            <RowDefinition/>
+            <RowDefinition />
         </Grid.RowDefinitions>
-        <DataGrid x:Name="petsGrid" CanUserAddRows="False" Grid.Row="0" SelectionChanged="petsGrid_SelectionChanged"/>
-        <DataGrid x:Name="foodGrid" CanUserAddRows="False" Grid.Row="1" SelectionChanged="foodGrid_SelectionChanged"/>
-        <Button x:Name="foodButt" Content="Корм" FontSize="30" Click="foodButt_Click"  Grid.Row="2" Margin="10,10,10,10"/>
-        <Button x:Name="petButt" Content="Животные" FontSize="30" Grid.Row="2"  Click="petButt_Click" Margin="10,86,10,10" Grid.RowSpan="2"/>
+        <Button x:Name="foodButt" Content="Корм" FontSize="30" Click="foodButt_Click"  Grid.Row="0" Margin="30,36,31,20"/>
+        <Button x:Name="petButt" Content="Животные" FontSize="30" Grid.Row="1"  Click="petButt_Click" Margin="30,33,31,29"/>
     </Grid>
 </Window>

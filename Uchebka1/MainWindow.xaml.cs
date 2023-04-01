@@ -27,15 +27,9 @@ namespace Uchebka1
         public MainWindow()
         {
             InitializeComponent();
-            petsGrid.ItemsSource = petsss.GetData();
-            foodGrid.ItemsSource=foodd.GetData();
         }
 
-        private void petsGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var sel = petsGrid.SelectedItem as DataRowView;
-            MessageBox.Show(sel.Row[1] + " " + sel.Row[2] + " " + sel.Row[3]);
-        }
+        
 
         private void foodButt_Click(object sender, RoutedEventArgs e)
         {
@@ -47,12 +41,6 @@ namespace Uchebka1
         {
             PetsWin win2 = new PetsWin();
             win2.Show();
-        }
-
-        private void foodGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var sel = foodGrid.SelectedItem as DataRowView;
-            MessageBox.Show((string)sel.Row[1]);
         }
     }
 }
