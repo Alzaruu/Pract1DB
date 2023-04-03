@@ -49,6 +49,17 @@ namespace Uchebka1
             if (foodGridd.SelectedItem != null)
             {
                 var sel = foodGridd.SelectedItem as DataRowView;
+                pisalka.Text = sel[1].ToString();
+            }
+        }
+
+        private void izm_Click(object sender, RoutedEventArgs e)
+        {
+            if (foodGridd.SelectedItem != null)
+            {
+                var selll = ((foodGridd.SelectedItem) as DataRowView).Row[0];
+                food.UpdateQuery(pisalka.Text, (int)selll);
+                foodGridd.ItemsSource = food.GetData();
             }
         }
     }

@@ -18,9 +18,11 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button x:Name="udal" Content="Удалить" FontSize="30" Grid.Column="1" Click="udal_Click"/>
             <Button x:Name="sozd" Content="Создать" FontSize="30" Grid.Column="0" Click="sozd_Click"/>
+            <Button x:Name="izm" Content="Изменить" FontSize="30" Grid.Column="2" Click="izm_Click" />
         </Grid>
     </Grid>
 </Window>
